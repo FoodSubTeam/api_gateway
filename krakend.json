@@ -1,0 +1,19 @@
+{
+    "version": 3,
+    "port": 8080,
+    "name": "api-gateway",
+    "endpoints": [
+      {
+        "endpoint": "/offer/*",
+        "method": "ANY",
+        "backend": [
+          {
+            "url_pattern": "/offer/{param*}",
+            "host": [
+                "http://offer-service:80"
+            ]
+          }
+        ]
+      }
+    ]
+}

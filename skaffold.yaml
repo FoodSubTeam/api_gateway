@@ -1,0 +1,23 @@
+apiVersion: skaffold/v2beta26
+kind: Config
+metadata:
+  name: api-gateway
+
+build:
+  artifacts:
+    - image: api-gateway
+      context: .
+      docker:
+        dockerfile: Dockerfile
+
+deploy:
+  kubectl:
+    manifests:
+      - ./configuration/krakend-deployment.yaml
+      - ./configuration/krakend-service.yaml
+
+portForward:
+  - resourceType: service
+    resourceName: api-gateway
+    port: 80
+    localPort: 30000

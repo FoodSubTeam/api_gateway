@@ -28,6 +28,20 @@
             ]
           }
         ]
+      },
+      {
+        "endpoint": "/subscriptions/*",
+        "method": "ANY",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/subscriptions/{param*}",
+            "encoding": "json",
+            "host": [
+                "http://subscription-service:80"
+            ]
+          }
+        ]
       }
     ]
 }

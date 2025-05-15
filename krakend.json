@@ -14,6 +14,20 @@
             ]
           }
         ]
+      },
+      {
+        "endpoint": "/kitchen/*",
+        "method": "ANY",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/kitchen/{param*}",
+            "encoding": "json",
+            "host": [
+                "http://kitchen-service:80"
+            ]
+          }
+        ]
       }
     ]
 }

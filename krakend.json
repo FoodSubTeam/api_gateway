@@ -66,12 +66,54 @@
         ]
       },
       {
-        "endpoint": "/subscriptions/*",
-        "method": "ANY",
+        "endpoint": "/subscription",
+        "method": "POST",
         "output_encoding": "json",
         "backend": [
           {
-            "url_pattern": "/subscriptions/{param*}",
+            "url_pattern": "/subscription",
+            "encoding": "json",
+            "host": [
+                "http://subscription-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/subscriptions",
+        "method": "GET",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/subscriptions",
+            "encoding": "json",
+            "host": [
+                "http://subscription-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/subscriptions/paid",
+        "method": "GET",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/subscriptions/paid",
+            "encoding": "json",
+            "host": [
+                "http://subscription-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/subscriptions/test",
+        "method": "GET",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/subscriptions/test",
             "encoding": "json",
             "host": [
                 "http://subscription-service:80"

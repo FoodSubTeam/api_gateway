@@ -4,13 +4,49 @@
     "name": "api-gateway",
     "endpoints": [
       {
-        "endpoint": "/offer/*",
-        "method": "ANY",
+        "endpoint": "/offer",
+        "method": "POST",
         "backend": [
           {
-            "url_pattern": "/offer/{param*}",
+            "url_pattern": "/offer",
             "host": [
-                "http://offer-service:80"
+              "http://offer-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/offers-by-ids",
+        "method": "POST",
+        "backend": [
+          {
+            "url_pattern": "/offers-by-ids",
+            "host": [
+              "http://offer-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/offers",
+        "method": "GET",
+        "backend": [
+          {
+            "url_pattern": "/offers",
+            "host": [
+              "http://offer-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/offer/{offer_id}",
+        "method": "GET",
+        "backend": [
+          {
+            "url_pattern": "/offer/{offer_id}",
+            "host": [
+              "http://offer-service:80"
             ]
           }
         ]

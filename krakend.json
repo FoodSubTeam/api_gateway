@@ -52,20 +52,6 @@
         ]
       },
       {
-        "endpoint": "/kitchen/*",
-        "method": "ANY",
-        "output_encoding": "json",
-        "backend": [
-          {
-            "url_pattern": "/kitchen/{param*}",
-            "encoding": "json",
-            "host": [
-                "http://kitchen-service:80"
-            ]
-          }
-        ]
-      },
-      {
         "endpoint": "/subscription",
         "method": "POST",
         "output_encoding": "json",
@@ -117,6 +103,123 @@
             "encoding": "json",
             "host": [
                 "http://subscription-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/order-management/test",
+        "method": "GET",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/order-management/test",
+            "encoding": "json",
+            "host": [
+                "http://order-management-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/kitchen-orders-paid",
+        "method": "POST",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/kitchen-orders-paid",
+            "encoding": "json",
+            "host": [
+                "http://order-management-service:80"
+            ],
+            "extra_config": {
+              "github.com/devopsfaith/krakend/proxy": {
+                "response_codes": [200]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "endpoint": "/kitchen-order",
+        "method": "POST",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/kitchen-order",
+            "encoding": "json",
+            "host": [
+                "http://kitchen-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/kitchen-order/{order_id}",
+        "method": "GET",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/kitchen-order/{order_id}",
+            "encoding": "json",
+            "host": [
+                "http://kitchen-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/kitchen-orders/by-kitchen/{kitchen_id}",
+        "method": "GET",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/kitchen-orders/by-kitchen/{kitchen_id}",
+            "encoding": "json",
+            "host": [
+                "http://kitchen-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/kitchen-orders",
+        "method": "GET",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/kitchen-orders",
+            "encoding": "json",
+            "host": [
+                "http://kitchen-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/kitchen/test-kafka",
+        "method": "GET",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/kitchen/test-kafka",
+            "encoding": "json",
+            "host": [
+                "http://kitchen-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/kitchen/test",
+        "method": "GET",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/kitchen/test",
+            "encoding": "json",
+            "host": [
+                "http://kitchen-service:80"
             ]
           }
         ]

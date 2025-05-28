@@ -223,6 +223,34 @@
             ]
           }
         ]
+      },
+      {
+        "endpoint": "/login",
+        "method": "GET",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/login",
+            "encoding": "json",
+            "host": [
+                "http://authentication-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/callback",
+        "method": "GET",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/callback",
+            "encoding": "json",
+            "host": [
+                "http://authentication-service:80"
+            ]
+          }
+        ]
       }
     ]
 }

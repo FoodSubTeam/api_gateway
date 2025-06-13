@@ -251,6 +251,76 @@
             ]
           }
         ]
+      },
+      {
+        "endpoint": "/delivery/test",
+        "method": "GET",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/delivery/test",
+            "encoding": "json",
+            "host": [
+                "http://delivery-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/delivery-orders-ready",
+        "method": "POST",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/delivery-orders-ready",
+            "encoding": "json",
+            "host": [
+                "http://order-management-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/kitchen-order/ready/{order_id}",
+        "method": "POST",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/kitchen-order/ready/{order_id}",
+            "encoding": "json",
+            "host": [
+                "http://kitchen-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/kitchen-orders/ready",
+        "method": "POST",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/kitchen-orders/ready",
+            "encoding": "json",
+            "host": [
+                "http://kitchen-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/delivery-orders",
+        "method": "GET",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/delivery-orders",
+            "encoding": "json",
+            "host": [
+                "http://delivery-service:80"
+            ]
+          }
+        ]
       }
     ]
 }

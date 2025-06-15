@@ -363,6 +363,48 @@
             ]
           }
         ]
+      },
+      {
+        "endpoint": "/user-test",
+        "method": "GET",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/user-test",
+            "encoding": "json",
+            "host": [
+                "http://user-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/user/{user_id}",
+        "method": "GET",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/user/{user_id}",
+            "encoding": "json",
+            "host": [
+                "http://user-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/users",
+        "method": "GET",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/users",
+            "encoding": "json",
+            "host": [
+                "http://user-service:80"
+            ]
+          }
+        ]
       }
     ]
 }

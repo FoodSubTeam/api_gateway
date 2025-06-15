@@ -108,6 +108,20 @@
         ]
       },
       {
+        "endpoint": "/subscription/cancel/{subscription_id}",
+        "method": "POST",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/subscription/cancel/{subscription_id}",
+            "encoding": "json",
+            "host": [
+                "http://subscription-service:80"
+            ]
+          }
+        ]
+      },
+      {
         "endpoint": "/order-management/test",
         "method": "GET",
         "output_encoding": "json",

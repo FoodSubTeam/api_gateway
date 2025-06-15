@@ -20,4 +20,4 @@ portForward:
   - resourceType: service
     resourceName: api-gateway
     port: 80
-    localPort: 30000
+    localPort: 8000

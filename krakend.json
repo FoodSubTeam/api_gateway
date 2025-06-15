@@ -349,6 +349,20 @@
             ]
           }
         ]
+      },
+      {
+        "endpoint": "/warehouses",
+        "method": "GET",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/warehouses",
+            "encoding": "json",
+            "host": [
+                "http://delivery-service:80"
+            ]
+          }
+        ]
       }
     ]
 }

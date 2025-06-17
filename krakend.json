@@ -405,6 +405,138 @@
             ]
           }
         ]
+      },
+      {
+        "endpoint": "/user/{id}/address",
+        "method": "POST",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/user/{id}/address",
+            "encoding": "json",
+            "host": [
+                "http://user-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/user/{id}/payment-method",
+        "method": "POST",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/user/{id}/payment-method",
+            "encoding": "json",
+            "host": [
+                "http://user-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/users/addresses",
+        "method": "GET",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/users/addresses",
+            "encoding": "json",
+            "host": [
+                "http://user-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/auth/test",
+        "method": "GET",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/auth/test",
+            "encoding": "json",
+            "host": [
+                "http://authentication-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/auth/register",
+        "method": "POST",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/auth/register",
+            "encoding": "json",
+            "host": [
+                "http://authentication-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/auth/login",
+        "method": "POST",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/auth/login",
+            "encoding": "json",
+            "host": [
+                "http://authentication-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/auth/create_user",
+        "method": "POST",
+        "output_encoding": "json",
+        "input_headers": [
+          "Authorization"
+        ],
+        "backend": [
+          {
+            "url_pattern": "/auth/create_user",
+            "encoding": "json",
+            "host": [
+                "http://authentication-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/auth/users",
+        "method": "GET",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/auth/users",
+            "encoding": "json",
+            "host": [
+                "http://authentication-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/auth/debug-headers",
+        "method": "GET",
+        "output_encoding": "json",
+        "input_headers": [
+          "Authorization"
+        ],
+        "backend": [
+          {
+            "url_pattern": "/auth/debug-headers",
+            "encoding": "json",
+            "host": [
+                "http://authentication-service:80"
+            ]
+          }
+        ]
       }
     ]
 }

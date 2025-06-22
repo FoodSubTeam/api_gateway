@@ -66,6 +66,9 @@
         "endpoint": "/subscription",
         "method": "POST",
         "output_encoding": "json",
+        "input_headers": [
+          "Authorization"
+        ],
         "backend": [
           {
             "url_pattern": "/subscription",
@@ -122,9 +125,29 @@
         "endpoint": "/subscription/cancel/{subscription_id}",
         "method": "POST",
         "output_encoding": "json",
+        "input_headers": [
+          "Authorization"
+        ],
         "backend": [
           {
             "url_pattern": "/subscription/cancel/{subscription_id}",
+            "encoding": "json",
+            "host": [
+                "http://subscription-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/subscriptions/user/{user_id}",
+        "method": "GET",
+        "output_encoding": "json",
+        "input_headers": [
+          "Authorization"
+        ],
+        "backend": [
+          {
+            "url_pattern": "/subscriptions/user/{user_id}",
             "encoding": "json",
             "host": [
                 "http://subscription-service:80"
@@ -309,6 +332,9 @@
         "endpoint": "/kitchen-order/ready/{order_id}",
         "method": "POST",
         "output_encoding": "json",
+        "input_headers": [
+          "Authorization"
+        ],
         "backend": [
           {
             "url_pattern": "/kitchen-order/ready/{order_id}",
@@ -323,6 +349,9 @@
         "endpoint": "/kitchen-orders/ready",
         "method": "POST",
         "output_encoding": "json",
+        "input_headers": [
+          "Authorization"
+        ],
         "backend": [
           {
             "url_pattern": "/kitchen-orders/ready",
@@ -337,6 +366,9 @@
         "endpoint": "/delivery-orders",
         "method": "GET",
         "output_encoding": "json",
+        "input_headers": [
+          "Authorization"
+        ],
         "backend": [
           {
             "url_pattern": "/delivery-orders",
@@ -351,6 +383,9 @@
         "endpoint": "/warehouse",
         "method": "POST",
         "output_encoding": "json",
+        "input_headers": [
+          "Authorization"
+        ],
         "backend": [
           {
             "url_pattern": "/warehouse",
@@ -365,6 +400,9 @@
         "endpoint": "/warehouses",
         "method": "GET",
         "output_encoding": "json",
+        "input_headers": [
+          "Authorization"
+        ],
         "backend": [
           {
             "url_pattern": "/warehouses",
@@ -424,20 +462,6 @@
         "backend": [
           {
             "url_pattern": "/user/{id}/address",
-            "encoding": "json",
-            "host": [
-                "http://user-service:80"
-            ]
-          }
-        ]
-      },
-      {
-        "endpoint": "/user/{id}/payment-method",
-        "method": "POST",
-        "output_encoding": "json",
-        "backend": [
-          {
-            "url_pattern": "/user/{id}/payment-method",
             "encoding": "json",
             "host": [
                 "http://user-service:80"
@@ -522,6 +546,9 @@
         "endpoint": "/auth/users",
         "method": "GET",
         "output_encoding": "json",
+        "input_headers": [
+          "Authorization"
+        ],
         "backend": [
           {
             "url_pattern": "/auth/users",
@@ -545,6 +572,159 @@
             "encoding": "json",
             "host": [
                 "http://authentication-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/payment/intent/{user_id}",
+        "method": "POST",
+        "output_encoding": "json",
+        "input_headers": [
+          "Authorization"
+        ],
+        "backend": [
+          {
+            "url_pattern": "/payment/intent/{user_id}",
+            "encoding": "json",
+            "host": [
+                "http://payment-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/payment/user",
+        "method": "POST",
+        "output_encoding": "json",
+        "input_headers": [
+          "Authorization"
+        ],
+        "backend": [
+          {
+            "url_pattern": "/payment/user",
+            "encoding": "json",
+            "host": [
+                "http://payment-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/payment/default-method/{user_id}",
+        "method": "POST",
+        "output_encoding": "json",
+        "input_headers": [
+          "Authorization"
+        ],
+        "backend": [
+          {
+            "url_pattern": "/payment/default-method/{user_id}",
+            "encoding": "json",
+            "host": [
+                "http://payment-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/user/{user_id}/kitchen-id",
+        "method": "GET",
+        "output_encoding": "json",
+        "input_headers": [
+          "Authorization"
+        ],
+        "backend": [
+          {
+            "url_pattern": "/user/{user_id}/kitchen-id",
+            "encoding": "json",
+            "host": [
+                "http://user-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/kitchen",
+        "method": "POST",
+        "output_encoding": "json",
+        "input_headers": [
+          "Authorization"
+        ],
+        "backend": [
+          {
+            "url_pattern": "/kitchen",
+            "encoding": "json",
+            "host": [
+                "http://kitchen-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/kitchens",
+        "method": "GET",
+        "output_encoding": "json",
+        "input_headers": [
+          "Authorization"
+        ],
+        "backend": [
+          {
+            "url_pattern": "/kitchens",
+            "encoding": "json",
+            "host": [
+                "http://kitchen-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/kitchen-order/pending/{kitchen_id}",
+        "method": "GET",
+        "output_encoding": "json",
+        "input_headers": [
+          "Authorization"
+        ],
+        "backend": [
+          {
+            "url_pattern": "/kitchen-order/pending/{kitchen_id}",
+            "encoding": "json",
+            "host": [
+                "http://kitchen-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/subscriptions/paid/{kitchen_id}",
+        "method": "GET",
+        "output_encoding": "json",
+        "input_headers": [
+          "Authorization"
+        ],
+        "backend": [
+          {
+            "url_pattern": "/subscriptions/paid/{kitchen_id}",
+            "encoding": "json",
+            "host": [
+                "http://subscription-service:80"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/kitchen-orders-paid/{kitchen_id}",
+        "method": "POST",
+        "output_encoding": "json",
+        "input_headers": [
+          "Authorization"
+        ],
+        "backend": [
+          {
+            "url_pattern": "/kitchen-orders-paid/{kitchen_id}",
+            "encoding": "json",
+            "host": [
+                "http://order-management-service:80"
             ]
           }
         ]
